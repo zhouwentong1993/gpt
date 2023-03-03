@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatGPT</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+      }
+
+      button[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #555;
+      }
+
+      #output {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ChatGPT</h1>
+    <form>
+      <label for="input">你想问什么：</label>
+      <input type="text" id="input" name="input" placeholder="请输入内容" required>
+      <button type="submit">提交</button>
+    </form>
+    <div id="output"></div>
+    <script>
+      const form = document.querySelector("form");
+      const output = document.querySelector("#output");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const input = document.querySelector("#input").value;
+        output.innerHTML = `<p>我的回答是: ${input}</p>`;
+      });
+    </script>
+  </body>
+</html>
